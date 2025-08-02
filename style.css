@@ -87,14 +87,18 @@ button:hover {
     background-color: #3498db;
 }
 
+/* PERBAIKAN TATA LETAK MOBILE */
 .mobile-controls {
-    display: grid;
-    grid-template-areas:
-        ". up ."
-        "left . right"
-        ". down .";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
     margin-top: 20px;
+}
+
+.mobile-controls .horizontal-controls {
+    display: flex;
+    gap: 10px;
 }
 
 .mobile-controls button {
@@ -116,11 +120,6 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-#upBtn { grid-area: up; }
-#leftBtn { grid-area: left; }
-#rightBtn { grid-area: right; }
-#downBtn { grid-area: down; }
-
 /* MEDIA QUERY YANG SUDAH DIPERBAIKI */
 @media (max-width: 599px) {
     h1 {
@@ -137,10 +136,11 @@ button:hover {
     }
     .mobile-controls {
         margin-top: 10px;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto auto;
-        justify-items: center;
-        align-items: center;
+    }
+    .mobile-controls button {
+        width: 50px;
+        height: 50px;
+        font-size: 0.8em;
     }
     #desktopTutorial {
         display: none;
@@ -149,7 +149,7 @@ button:hover {
         display: block;
     }
     .mobile-controls:not(.hidden) {
-        display: grid;
+        display: flex;
     }
 }
 .hidden {

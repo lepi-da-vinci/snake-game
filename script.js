@@ -20,7 +20,7 @@ const rightBtn = document.getElementById('rightBtn');
 
 // Variabel untuk pengaturan game
 const gridSize = 20;
-let snakeSpeed = 100;
+let snakeSpeed = 155;
 let snake = [];
 let direction = '';
 let changingDirection = false;
