@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Ular Sederhana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Game Ular Sederhana</h1>
+
+    <div class="game-container">
+    <div class="info-panel">
+        <p>Skor: <span id="score">0</span></p>
+        <p>Skor Tertinggi: <span id="highScore">0</span></p>
+    </div>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+</div>
+
+<div class="start-menu" id="startMenu">
+    <h2>Selamat Datang!</h2>
+    <div class="tutorial">
+        <h3>Cara Bermain:</h3>
+        <p>Gunakan tombol panah atau " W, A, S, D "" untuk menggerakkan ular.</p>
+        <p>Makan apel untuk menambah panjang ular dan meningkatkan skor.</p>
+        <p>Jangan menabrak dinding atau badanmu sendiri, atau kamu akan kalah!</p>
+    </div>
+    <button id="startButton">Mulai Game</button>
+</div>
+
+<div class="game-over-menu hidden" id="gameOverMenu">
+    <h2>Game Over!</h2>
+    <p>Skor Akhir: <span id="finalScore">0</span></p>
+    <button id="restartButton">Main Lagi</button>
+</div>
+
+<script src="script.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

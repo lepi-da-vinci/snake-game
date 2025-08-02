@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.game-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-panel {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#gameCanvas {
+    background-color: #34495e;
+    border: 5px solid #2980b9;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.start-menu, .game-over-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(44, 62, 80, 0.95);
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+    color: #ecf0f1;
+    text-align: center;
+    width: 300px;
+    z-index: 10;
+}
+
+.start-menu h2, .game-over-menu h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.tutorial {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.tutorial h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3498db;
+}
+
+.hidden {
+    display: none;
+}
