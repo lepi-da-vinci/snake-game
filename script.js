@@ -11,7 +11,7 @@ const highScoreDisplay = document.getElementById('highScore');
 
 // Variabel untuk pengaturan game
 const gridSize = 20;
-let snakeSpeed = 150;
+let snakeSpeed = 200;
 let snake = [];
 let direction = '';
 let changingDirection = false;
