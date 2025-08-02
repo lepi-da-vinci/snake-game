@@ -20,7 +20,7 @@ const rightBtn = document.getElementById('rightBtn');
 
 // Variabel untuk pengaturan game
 const gridSize = 20;
-let snakeSpeed = 170;
+let snakeSpeed = 150;
 let snake = [];
 let direction = '';
 let changingDirection = false;
@@ -51,18 +51,26 @@ function checkDeviceType() {
     if (isMobile) {
         desktopTutorial.classList.add('hidden');
         mobileTutorial.classList.remove('hidden');
-        mobileControls.classList.remove('hidden'); // Menampilkan kontrol mobile
+        mobileControls.classList.remove('hidden');
     } else {
         desktopTutorial.classList.remove('hidden');
         mobileTutorial.classList.add('hidden');
-        mobileControls.classList.add('hidden'); // Menyembunyikan kontrol mobile
+        mobileControls.classList.add('hidden');
     }
 }
 
 // Fungsi untuk memulai game
 function startGame() {
+    // Memastikan kanvas memiliki ukuran yang benar di JavaScript
+    const canvasSize = Math.floor(canvas.offsetWidth / gridSize) * gridSize;
+    canvas.width = canvasSize;
+    canvas.height = canvasSize;
+    
     // Mereset variabel game
-    snake = [{ x: 10 * gridSize, y: 10 * gridSize }];
+    snake = [{ 
+        x: Math.floor(canvasSize / 2 / gridSize) * gridSize, 
+        y: Math.floor(canvasSize / 2 / gridSize) * gridSize 
+    }];
     direction = '';
     changingDirection = false;
     score = 0;
@@ -73,20 +81,19 @@ function startGame() {
     startMenu.classList.add('hidden');
     gameOverMenu.classList.add('hidden');
     
-    // Memastikan tombol mobile tampil jika di HP
     checkDeviceType();
 
     createFood();
     main(); // Memulai game loop
 }
 
-// Fungsi utama yang menjalankan game
+// pengulangan
 function main() {
     if (gameOver() && gameRunning) {
         gameRunning = false;
         gameOverMenu.classList.remove('hidden');
         finalScoreDisplay.textContent = score;
-        updateHighScore(); // Memperbarui skor tertinggi
+        updateHighScore();
         return;
     }
 
@@ -102,6 +109,3 @@ function main() {
     }, snakeSpeed);
 }
 
-// Fungsi-fungsi lainnya (drawSnake, drawFood, moveSnake, createFood, gameOver, changeDirection, loadHighScore, updateHighScore)
-// Tetap sama seperti sebelumnya, tidak perlu diubah.
-// ...

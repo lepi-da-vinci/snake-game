@@ -12,8 +12,8 @@ body {
 }
 
 h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 1.8em;
+    margin-bottom: 10px;
 }
 
 .game-container {
@@ -88,7 +88,6 @@ button:hover {
     background-color: #3498db;
 }
 
-/* Bagian CSS baru untuk Mobile */
 .mobile-controls {
     display: flex;
     flex-direction: column;
@@ -103,6 +102,45 @@ button:hover {
     margin: 5px;
     padding: 0;
 }
+
+.horizontal-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.mobile-controls {
+    display: grid;
+    grid-template-areas:
+        ". up ."
+        "left . right"
+        ". down .";
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.mobile-controls button {
+    width: 60px;
+    height: 60px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    border-radius: 50%; 
+    border: 3px solid #7f8c8d;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    transition: transform 0.1s ease-in-out, background-color 0.2s;
+}
+
+.mobile-controls button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+#upBtn { grid-area: up; }
+#leftBtn { grid-area: left; }
+#rightBtn { grid-area: right; }
+#downBtn { grid-area: down; }
 
 .horizontal-controls {
     display: flex;
