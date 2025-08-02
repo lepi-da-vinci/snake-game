@@ -121,11 +121,26 @@ button:hover {
 #rightBtn { grid-area: right; }
 #downBtn { grid-area: down; }
 
-/* Media Query untuk mengatur ukuran kanvas dan panel info */
+/* MEDIA QUERY YANG SUDAH DIPERBAIKI */
 @media (max-width: 599px) {
-    #gameCanvas, .info-panel {
+    h1 {
+        margin-bottom: 5px;
+    }
+    .info-panel {
+        width: 90vw;
+        margin-bottom: 5px;
+        font-size: 1em;
+    }
+    #gameCanvas {
         width: 90vw;
         height: 90vw;
+    }
+    .mobile-controls {
+        margin-top: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        justify-items: center;
+        align-items: center;
     }
     #desktopTutorial {
         display: none;
