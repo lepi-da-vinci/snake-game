@@ -36,6 +36,9 @@ h1 {
     background-color: #34495e;
     border: 5px solid #2980b9;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    /* Atur lebar dan tinggi secara fleksibel */
+    width: min(90vw, 400px);
+    height: min(90vw, 400px);
 }
 
 .start-menu, .game-over-menu {
@@ -83,6 +86,55 @@ button {
 
 button:hover {
     background-color: #3498db;
+}
+
+/* Bagian CSS baru untuk Mobile */
+.mobile-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.mobile-controls button {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5em;
+    margin: 5px;
+    padding: 0;
+}
+
+.horizontal-controls {
+    display: flex;
+    gap: 5px;
+}
+
+/* Media Query untuk menyembunyikan atau menampilkan tombol */
+@media (min-width: 600px) {
+    .mobile-controls {
+        display: none;
+    }
+    #mobileTutorial {
+        display: none;
+    }
+    #desktopTutorial {
+        display: block;
+    }
+}
+
+@media (max-width: 599px) {
+    .info-panel {
+        width: 90vw;
+    }
+    #desktopTutorial {
+        display: none;
+    }
+    #mobileTutorial {
+        display: block;
+    }
+    .mobile-controls:not(.hidden) {
+        display: flex;
+    }
 }
 
 .hidden {

@@ -19,12 +19,21 @@
 
 <div class="start-menu" id="startMenu">
     <h2>Selamat Datang!</h2>
+    <div class="start-menu" id="startMenu">
+    <h2>Selamat Datang!</h2>
     <div class="tutorial">
         <h3>Cara Bermain:</h3>
-        <p>Gunakan tombol panah atau " W, A, S, D "" untuk menggerakkan ular.</p>
+        <div id="desktopTutorial">
+            <p>Gunakan tombol panah atau **W, A, S, D** di keyboard untuk menggerakkan ular.</p>
+        </div>
+        <div id="mobileTutorial" class="hidden">
+            <p>Gunakan tombol di layar untuk menggerakkan ular.</p>
+        </div>
         <p>Makan apel untuk menambah panjang ular dan meningkatkan skor.</p>
         <p>Jangan menabrak dinding atau badanmu sendiri, atau kamu akan kalah!</p>
     </div>
+    <button id="startButton">Mulai Game</button>
+</div>
     <button id="startButton">Mulai Game</button>
 </div>
 
@@ -33,6 +42,15 @@
     <p>Skor Akhir: <span id="finalScore">0</span></p>
     <button id="restartButton">Main Lagi</button>
 </div>
+
+<div class="mobile-controls hidden">
+        <button id="upBtn">Up</button>
+        <div class="horizontal-controls">
+            <button id="leftBtn">Left</button>
+            <button id="rightBtn">Right</button>
+        </div>
+        <button id="downBtn">Down</button>
+    </div>
 
 <script src="script.js"></script>
 
